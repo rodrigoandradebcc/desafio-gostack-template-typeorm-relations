@@ -123,6 +123,16 @@ describe('App', () => {
       email: 'oi@rocketseat.com.br',
     });
 
+    console.log('AQUI', {
+      customer_id: customer.body.id,
+      products: [
+        {
+          id: product.body.id,
+          quantity: 5,
+        },
+      ],
+    });
+
     const response = await request(app)
       .post('/orders')
       .send({
